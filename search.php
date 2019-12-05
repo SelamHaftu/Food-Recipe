@@ -1,55 +1,56 @@
 <?php
 /**
- * The template for displaying search results pages
+ * The template for displaying Search Results pages.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package Food_Recipe
+ * @package OceanWP WordPress theme
  */
 
-get_header();
-?>
+get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<?php do_action( 'ocean_before_content_wrap' ); ?>
 
-		<?php if ( have_posts() ) : ?>
+	<div id="content-wrap" class="container clr">
 
-			<header class="page-header">
-				<h1 class="page-title">
+		<?php do_action( 'ocean_before_primary' ); ?>
+
+		<div id="primary" class="content-area clr">
+
+			<?php do_action( 'ocean_before_content' ); ?>
+
+			<div id="content" class="site-content clr">
+
+				<?php do_action( 'ocean_before_content_inner' ); ?>
+
+				<?php if ( have_posts() ) : ?>
+
+						<?php while ( have_posts() ) : the_post(); ?>
+
+							<?php get_template_part( 'partials/search/layout' ); ?>
+
+						<?php endwhile; ?>
+
+					<?php oceanwp_pagination(); ?>
+
+				<?php else : ?>
+
 					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'food-recipe' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
+					// Display no post found notice
+					get_template_part( 'partials/none' ); ?>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+				<?php endif; ?>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+				<?php do_action( 'ocean_after_content_inner' ); ?>
 
-			endwhile;
+			</div><!-- #content -->
 
-			the_posts_navigation();
+			<?php do_action( 'ocean_after_content' ); ?>
 
-		else :
+		</div><!-- #primary -->
 
-			get_template_part( 'template-parts/content', 'none' );
+		<?php do_action( 'ocean_after_primary' ); ?>
 
-		endif;
-		?>
+	</div><!-- #content-wrap -->
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+	<?php do_action( 'ocean_after_content_wrap' ); ?>
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>
