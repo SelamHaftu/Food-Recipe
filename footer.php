@@ -1,73 +1,64 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * @package OceanWP WordPress theme
- */ ?>
-
-        </main><!-- #main -->
-
-        <?php do_action( 'ocean_after_main' ); ?>
-
-        <?php do_action( 'ocean_before_footer' ); ?>
-
-        <?php
-        // Elementor `footer` location
-        if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'footer' ) ) { ?>
-
-            <?php do_action( 'ocean_footer' ); ?>
-            
-        <?php } ?>
-
-        <?php do_action( 'ocean_after_footer' ); ?>
-                
-    </div><!-- #wrap -->
-
-    <?php do_action( 'ocean_after_wrap' ); ?>
-
-</div><!-- #outer-wrap -->
-
-<?php do_action( 'ocean_after_outer_wrap' ); ?>
-
-<?php
-// If is not sticky footer
-if ( ! class_exists( 'Ocean_Sticky_Footer' ) ) {
-    get_template_part( 'partials/scroll-top' );
-} ?>
-
-<?php
-// Search overlay style
-if ( 'overlay' == oceanwp_menu_search_style() ) {
-    get_template_part( 'partials/header/search-overlay' );
-} ?>
-
-<?php
-// If sidebar mobile menu style
-if ( 'sidebar' == oceanwp_mobile_menu_style() ) {
-    
-    // Mobile panel close button
-    if ( get_theme_mod( 'ocean_mobile_menu_close_btn', true ) ) {
-        get_template_part( 'partials/mobile/mobile-sidr-close' );
-    } ?>
-
-    <?php
-    // Mobile Menu (if defined)
-    get_template_part( 'partials/mobile/mobile-nav' ); ?>
-
-    <?php
-    // Mobile search form
-    if ( get_theme_mod( 'ocean_mobile_menu_search', true ) ) {
-        get_template_part( 'partials/mobile/mobile-search' );
-    }
-
-} ?>
-
-<?php
-// If full screen mobile menu style
-if ( 'fullscreen' == oceanwp_mobile_menu_style() ) {
-    get_template_part( 'partials/mobile/mobile-fullscreen' );
-} ?>
+</div><!-- #content -->
+</div>
+	<footer>
+		<div class="container">
+			<div class="row">
+			
+			<div class="col-lg-6 col-md-6">
+				<h3>Site Map</h3>
+				<ul class="list-unstyled three-column">
+				<li>Home</li>
+				<li>Services</li>
+				<li>About</li>
+				<li>Code</li>
+				<li>Design</li>
+				<li>Host</li>
+				<li>Contact</li>
+				<li>Company</li>
+				</ul>
+			</div>
+			
+			<div class="col-lg-6 col-md-6">
+				<h3>latest Articles</h3>
+				<div class="media">
+				<a href="#" class="pull-left">				</a>
+				<div class="media-body">
+					<h4 class="media-heading">Programming</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				</div>
+				</div>
+				
+				<div class="media">
+				<a href="#" class="pull-left">
+				</a>
+				<div class="media-body">
+					<h4 class="media-heading">Coding</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				</div>
+				</div>
+				
+				<div class="media">
+				<a href="#" class="pull-left">
+				</a>
+				<div class="media-body">
+					<h4 class="media-heading">Web Sesign</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				</div>
+				</div>
+				
+			</div>		
+			</div>
+		</div>
+		<div class="copyright text-center">
+			Copyright &copy; <?php bloginfo( 'name' );
+						echo ' - ';
+						echo date("Y"); ?>
+		</div>
+	</footer>
+	
+</div><!-- #page -->
 
 <?php wp_footer(); ?>
+
 </body>
 </html>

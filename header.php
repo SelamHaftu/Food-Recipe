@@ -15,19 +15,35 @@
 
 <body <?php body_class(); ?>>
 
-<div class="blog-masthead">
-    <div class="container">
-        <nav class="blog-nav">
-            <a class="blog-nav-item active" href="#">Home</a>
-            <a class="blog-nav-item" href="#">Service</a>
-            <a class="blog-nav-item" href="#">Profile</a>
-            <a class="blog-nav-item" href="#">Blog</a>
-            <a class="blog-nav-item" href="#">About</a>
-        </nav>
-    </div>
-</div>
+<div id="page" class="site">
 
-<div class="container">
+<header id="masthead" class="site-header" role="banner">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-fixed">
+    <nav class="navbar navbar-dark bg-primary navbar-expand-md fixed-top">
+        <a class="navbar-brand" href="#">
+            <?php bloginfo('name'); ?>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <?php
+            wp_nav_menu( array(
+                'theme_location'  => 'menu-1',
+                'menu_id'         => 'primary-menu',
+                'container'       => 'div',
+                'container_id'    => 'navbarCollapse',
+                'container_class' => 'collapse navbar-collapse',
+                'menu_class'      => 'navbar-nav mr-auto',
+                'walker'          => new bs4navwalker()
+              ) );
+            get_search_form(); 
+        ?>
+        </nav>
+
+
+</header><!-- #masthead -->
+            <br><br><br>
+<div id="content" class="site-content container">
 
     <!-- <div class="blog-header">
         <h1 class="blog-title">The Bootstrap Blog</h1>
