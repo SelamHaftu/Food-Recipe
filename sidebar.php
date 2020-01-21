@@ -1,32 +1,22 @@
-<?php
-/**
- * The sidebar containing the main widget area.
- *
- * @package OceanWP WordPress theme
- */
-
-// Retunr if full width or full screen
-if ( in_array( oceanwp_post_layout(), array( 'full-screen', 'full-width' ) ) ) {
-	return;
-} ?>
-
-<?php do_action( 'ocean_before_sidebar' ); ?>
-
-<aside id="right-sidebar" class="sidebar-container widget-area sidebar-primary"<?php oceanwp_schema_markup( 'sidebar' ); ?>>
-
-	<?php do_action( 'ocean_before_sidebar_inner' ); ?>
-
-	<div id="right-sidebar-inner" class="clr">
-
-		<?php
-		if ( $sidebar = oceanwp_get_sidebar() ) {
-			dynamic_sidebar( $sidebar );
-		} ?>
-
-	</div><!-- #sidebar-inner -->
-
-	<?php do_action( 'ocean_after_sidebar_inner' ); ?>
-
-</aside><!-- #right-sidebar -->
-
-<?php do_action( 'ocean_after_sidebar' ); ?>
+<div id="primary" class="sidebar-nav">
+    <?php do_action( 'before_sidebar' ); ?>
+    <?php if ( ! dynamic_sidebar( 'sidebar-primary' ) ) : ?>
+        <aside id="search" class="widget widget_search">
+           <?php get_search_form(); ?>
+        </aside>
+        <aside id="archives" class="widget">
+            <h1 class="widget-title"><?php _e( 'Archives', 'shape' ); ?></h1>
+            <ul>
+                <?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+            </ul>
+        </aside>
+        <aside id="meta" class="widget">
+            <h1 class="widget-title"><?php _e( 'Meta', 'shape' ); ?></h1>
+            <ul>
+                <?php wp_register(); ?>
+                <li><?php wp_loginout(); ?></li>
+                <?php wp_meta(); ?>
+            </ul>
+        </aside>
+   <?php endif; ?>
+</div>
