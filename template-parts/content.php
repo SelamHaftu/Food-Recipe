@@ -22,13 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				the_author();
+				food_recipe_posted_on();
+				food_recipe_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php get_the_post_thumbnail(); ?>
+	<?php food_recipe_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -53,6 +54,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		
+		<?php food_recipe_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
