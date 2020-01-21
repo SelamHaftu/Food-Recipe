@@ -55,7 +55,7 @@ class bs4navwalker extends Walker_Nav_Menu
 
         // New
         if ($depth === 0) {
-            $atts['class'] = 'nav-link';
+            $atts['class'] = 'nav-link text-dark';
         }
 
         if ($depth === 0 && in_array('menu-item-has-children', $classes)) {

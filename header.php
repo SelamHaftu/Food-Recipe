@@ -19,8 +19,8 @@
 
 <header id="masthead" class="site-header" role="banner">
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-fixed">
-    <nav class="navbar navbar-dark bg-primary navbar-expand-md fixed-top">
-        <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-dark bg-warning navbar-expand-md fixed-top">
+        <a class="navbar-brand text-dark" href="#">
             <?php bloginfo('name'); ?>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@
                 'container'       => 'div',
                 'container_id'    => 'navbarCollapse',
                 'container_class' => 'collapse navbar-collapse',
-                'menu_class'      => 'navbar-nav mr-auto',
+                'menu_class'      => 'navbar-nav mr-auto text-dark',
                 'walker'          => new bs4navwalker()
               ) );
             get_search_form(); 
