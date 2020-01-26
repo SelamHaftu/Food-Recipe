@@ -17,9 +17,9 @@
 
 <div id="page" class="site">
 
-<header id="masthead" class="site-header" role="banner">
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-fixed">
-    <nav class="navbar navbar-dark bg-warning navbar-expand-md fixed-top">
+<header id="masthead" class="shadow site-header" role="banner">
+    <nav class="shadow navbar navbar-dark bg-dark navbar-expand-lg navbar-fixed">
+    <nav class=" shadow navbar navbar-dark bg-warning navbar-expand-md fixed-top">
         <a class="navbar-brand text-dark" href="#">
             <?php bloginfo('name'); ?>
         </a>
