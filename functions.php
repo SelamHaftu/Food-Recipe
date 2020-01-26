@@ -89,19 +89,19 @@ function foodzone_scripts() {
 
 	// Get theme version number (located in style.css)
 	$theme = wp_get_theme();
-	wp_register_script('bootstrap', get_template_directory_uri(). '/js/bootstrap.bundle.min.js', array( 'jquery' ), BOOTSTRAP_VERSION, true);
+	wp_register_script('bootstrap', get_template_directory_uri(). '/assets/js/bootstrap.bundle.min.js', array( 'jquery' ), BOOTSTRAP_VERSION, true);
 		wp_enqueue_script('bootstrap');
 		
-		wp_register_script( 'site', get_template_directory_uri().'/js/site.js', array( 'jquery', 'bootstrap' ), $theme->get( 'Version' ), true );
+		wp_register_script( 'site', get_template_directory_uri().'/assets/js/site.js', array( 'jquery', 'bootstrap' ), $theme->get( 'Version' ), true );
 		wp_enqueue_script( 'site' );
 
-		wp_register_style( 'bootstrap', get_stylesheet_directory_uri().'/css/bootstrap.min.css', array(), BOOTSTRAP_VERSION, 'all' );
+		wp_register_style( 'bootstrap', get_stylesheet_directory_uri().'/assets/css/bootstrap.min.css', array(), BOOTSTRAP_VERSION, 'all' );
 		wp_enqueue_style( 'bootstrap' );
 
-		wp_register_style( 'mystyle', get_stylesheet_directory_uri().'/css/mystyle.css', array(), '20191212', 'all' );
+		wp_register_style( 'mystyle', get_stylesheet_directory_uri().'/assets/css/mystyle.css', array(), '20191212', 'all' );
 		wp_enqueue_style( 'mystyle' );
 		
-		wp_register_style( 'screen', get_stylesheet_directory_uri().'/style.css', array(), $theme->get( 'Version' ), 'screen' );
+		wp_register_style( 'screen', get_stylesheet_directory_uri().'/assets/style.css', array(), $theme->get( 'Version' ), 'screen' );
 		wp_enqueue_style( 'screen' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
