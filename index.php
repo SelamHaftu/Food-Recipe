@@ -18,7 +18,7 @@ get_header();
 	<div id="primary" class="content-area">
 	<br>
 		<main id="main" class="site-main">
-			<div style="border-right:2px solid #dc3545; border-left:2px solid #dc3545;">
+			<div style="border-right:1px solid silver; border-left:1px solid silver;">
 			<center>
 			<?php
 				if ( have_posts() ) :
@@ -41,7 +41,6 @@ get_header();
 						<div class="bg-white text-black col-md-3 mr-4 ml-4 mt-1 mb-1">
 						
 						<div class="card-body">
-						<?php the_post_thumbnail( 'predefImageSize', ['class' => 'card-img-top', 'title' => 'Feature image','width'=>100,'height'=>100] ); ?>
 						<div class="card-header">
     							<strong><?php the_title(); ?></strong></div>
 							<hr>

@@ -41,7 +41,6 @@ get_header();
 						<div class="bg-white text-black col-md-3 mr-4 ml-4 mt-1 mb-1">
 						
 						<div class="card-body">
-						<?php the_post_thumbnail( 'predefImageSize', ['class' => 'card-img-top', 'title' => 'Feature image','width'=>100,'height'=>100] ); ?>
 						<div class="card-header">
     							<strong><?php the_title(); ?></strong></div>
 							<hr>
