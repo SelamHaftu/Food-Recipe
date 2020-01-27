@@ -1,53 +1,108 @@
 <?php
-/**
- * The template for displaying archive pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Food_Recipe
- */
-
 get_header();
 ?>
+<nav class="col-md-8" aria-label="breadcrumb">
+		<ol class="shadow breadcrumb">
+			<li class="breadcrumb-item active" aria-current="page">
+			<strong>
+			<h6 class="page-title">
+				<?php
+    				printf( __( 'Category : %s', '' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+				?>
+				</strong>
+				</h6>
+			</li>
+		</ol>
+		</nav>
 
 	<div id="primary" class="content-area">
+	<br>
 		<main id="main" class="site-main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
+			<div style="border-right:2px solid #dc3545; border-left:2px solid #dc3545;">
+			<center>
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+				if ( have_posts() ) :
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+					if ( is_home() && ! is_front_page() ) :
+						?>
+						<header>
+							<h2 class="blog-post-title"><?php single_post_title(); ?></h2>
+						</header>
+						<?php
+					endif;
+					?>
+					<div class="row">
+					<?php
+					/* Start the Loop */
+					while ( have_posts() ) :
+						the_post();
+						?>
 
-			endwhile;
+						<div class="bg-white text-black col-md-3 mr-4 ml-4 mt-1 mb-1">
+						
+						<div class="card-body">
+						<?php the_post_thumbnail( 'predefImageSize', ['class' => 'card-img-top', 'title' => 'Feature image','width'=>100,'height'=>100] ); ?>
+						<div class="card-header">
+    							<strong><?php the_title(); ?></strong></div>
+							<hr>
+							<h6 style="list-style-type:none; color:black!important;" class="badge badge-pill badge-light"><?php the_category(" "); ?></h6>
+							<?php 
+							echo('<a href='  .esc_url( get_permalink() ). ' class="btn btn-success">Read More</a>');
+							?>
+						</div>
+						</div>
+						
+					
 
-			the_posts_navigation();
 
-		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+						
+						<br>
+						<?php
+						/*
+						* Include the Post-Type-specific template for the content.
+						* If you want to override this in a child theme, then include a file
+						* called content-___.php (where ___ is the Post Type name) and that will be used instead.
+						*/
+						//get_template_part( 'template-parts/content', get_post_type() );
 
-		endif;
-		?>
+					endwhile;
+					?>
+					</div>
+					
+					<nav aria-label="Page navigation example">
+					<ul class="pagination">
+					<?php
+					
+						?>  
+					</ul>
+					</nav>
+					<?php
+				else :
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+					get_template_part( 'template-parts/content', 'none' );
 
-<?php
-get_sidebar();
+				endif;
+				?>
+				<center class="col-md-4">
+				<nav aria-label="Page navigation example">
+				<ul class="pagination">
+				<?php
+				the_posts_pagination( array(
+						'prev_text' => '<li class="page-item"></i><span class="screen-reader-text">' . __( 'Previous Page', 'pool' ) . '</span></li>',
+						'next_text' => '<li class="page-item"><span class="screen-reader-text">' . __( 'Next Page', 'pool' ) . '</span><i class="fa fa-arrow-right" aria-hidden="true"></i></li>',
+					) ); ?>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+				</ul>
+				</nav>
+				<center>
+				</div>
+			
+			</div>
+				</main><!-- #main -->	
+		</div>
+		<?php
+
 get_footer();
