@@ -23,15 +23,6 @@
 					get_search_form();
 					?>
 					<br>
-			<h4>Contact Us</h4>
-			<ul class="list-inline col-xs-12">
-              <a href="#"><i class="fa fa-google-plus-square fa-5x"></i></a>
-              <a href="#"><i class="fa fa-twitter-square fa-5x"></i></a>
-              <a href="#"><i class="fa fa-youtube-square fa-5x"></i></a>
-              <a href="#"><i class="fa fa-rss-square fa-5x"></i></a>               
-            </ul>
-			<p class="mb-0"><i class="fa fa-phone mr-3"></i>(541) 754-3010</p>
-			<p><i class="fa fa-envelope-o mr-3"></i>info@hsdf.com</p>
 			</div>
 			<div class="col-lg-3 col-xs-12 links">
 			<h5 class="widget-title"><?php esc_html_e( 'Sort By Categories', 'foodzone' ); ?></h5>
