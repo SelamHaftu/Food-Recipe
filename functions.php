@@ -110,6 +110,12 @@ function foodzone_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'foodzone_scripts' );
 
+
+function foodzone_add_editor_style (){
+	add_editor_style('assets/css/mystyle.css');
+} 
+add_action('admin_init','foodzone_add_editor_style');
+/**
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
