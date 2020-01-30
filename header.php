@@ -34,6 +34,8 @@
                 'container_id'    => 'navbarCollapse',
                 'container_class' => 'collapse navbar-collapse',
                 'menu_class'      => 'navbar-nav mr-auto text-dark',
+                'depth'           => 2,
+				'fallback_cb'     => 'bs4navwalker::fallback',
                 'walker'          => new bs4navwalker()
               ) );
             get_search_form(); 
