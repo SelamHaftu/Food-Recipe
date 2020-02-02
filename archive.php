@@ -18,7 +18,7 @@ get_header();
 	<div id="primary" class="content-area">
 	<br>
 		<main id="main" class="site-main">
-			<div style="border-right:2px solid #dc3545; border-left:2px solid #dc3545;">
+			<div style="border-right:1px solid silver; border-left:2px solid silver;">
 			<center>
 			<?php
 				if ( have_posts() ) :
@@ -38,24 +38,9 @@ get_header();
 						the_post();
 						?>
 
-						<div class="bg-white text-black col-md-3 mr-4 ml-4 mt-1 mb-1">
-						
-						<div class="card-body">
-						<div class="card-header">
-    							<strong><?php the_title(); ?></strong></div>
-							<hr>
-							<h6 style="list-style-type:none; color:black!important;" class="badge badge-pill badge-light"><?php the_category(" "); ?></h6>
-							<?php 
-							echo('<a href='  .esc_url( get_permalink() ). ' class="btn btn-success">Read More</a>');
-							?>
-						</div>
-						</div>
-						
-					
+						<?php get_template_part( 'template-parts/post/post');?>
 
-
-
-						
+												
 						<br>
 						<?php
 						/*
