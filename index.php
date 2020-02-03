@@ -64,8 +64,8 @@ get_header();
 				
 				<?php
 				the_posts_pagination( array(
-						'prev_text' => '<li class="page-item"></i><span class="screen-reader-text">' . __( 'Previous Page', 'pool' ) . '</span></li>',
-						'next_text' => '<li class="page-item"><span class="screen-reader-text">' . __( 'Next Page', 'pool' ) . '</span><i class="fa fa-arrow-right" aria-hidden="true"></i></li>',
+						'prev_text' => '<li class="page-item"></i><span class="screen-reader-text">' . __( 'Previous Page', 'foodzone' ) . '</span></li>',
+						'next_text' => '<li class="page-item"><span class="screen-reader-text">' . __( 'Next Page', 'foodzone' ) . '</span><i class="fa fa-arrow-right" aria-hidden="true"></i></li>',
 					) ); ?>
 	
 				<center>
@@ -79,5 +79,6 @@ get_header();
 			</div>
 				</main><!-- #main -->	
 		</div>
+		<br>
 		<?php
 get_footer();

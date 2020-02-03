@@ -73,8 +73,8 @@ get_header();
 				<ul class="pagination">
 				<?php
 				the_posts_pagination( array(
-						'prev_text' => '<li class="page-item"></i><span class="screen-reader-text">' . __( 'Previous Page', 'pool' ) . '</span></li>',
-						'next_text' => '<li class="page-item"><span class="screen-reader-text">' . __( 'Next Page', 'pool' ) . '</span><i class="fa fa-arrow-right" aria-hidden="true"></i></li>',
+						'prev_text' => '<li class="page-item"></i><span class="screen-reader-text">' . __( 'Previous Page', 'foodzone' ) . '</span></li>',
+						'next_text' => '<li class="page-item"><span class="screen-reader-text">' . __( 'Next Page', 'foodzone' ) . '</span><i class="fa fa-arrow-right" aria-hidden="true"></i></li>',
 					) ); ?>
 					<li class="page-item"><a class="page-link" href="#">1</a></li>
 					<li class="page-item"><a class="page-link" href="#">2</a></li>
