@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Food_Recipe
+ * @package foodzone
  */
 
 ?>
@@ -12,6 +12,14 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
+		if ( function_exists( 'add_theme_support' ) ) { 
+			add_theme_support( 'post-thumbnails' );
+			set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
+
+			// additional image sizes
+			// delete the next line if you do not need additional image sizes
+			add_image_size( 'category-thumb', 300, 9999 ); //300 pixels wide (and unlimited height)
+		}		
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 			?>
@@ -31,14 +39,12 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php get_the_post_thumbnail(); ?>
-
 	<div class="entry-content">
 		<?php
 		the_content( sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'food-recipe' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'foodzone' ),
 				array(
 					'span' => array(
 						'class' => array(),
@@ -49,7 +55,7 @@
 		) );
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'food-recipe' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'foodzone' ),
 			'after'  => '</div>',
 		) );
 		?>

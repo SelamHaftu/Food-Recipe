@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Food_Recipe
+ * @package foodzone
  */
 
 get_header();

@@ -4,13 +4,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Food_Recipe
+ * @package foodzone
  */
 
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" style="background-color:white; padding:20px; border-radius:8px;" class="shadow-lg content-area">
 		<main id="main" class="site-main">
 
 		<?php

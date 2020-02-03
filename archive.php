@@ -17,7 +17,7 @@ get_header();
 
 	<div id="primary" class="content-area">
 	<br>
-		<main id="main" class="site-main">
+		<main id="main" style="background-color:white; padding:20px; border-radius:8px;" class="site-main">
 			<div style="border-right:1px solid silver; border-left:2px solid silver;">
 			<center>
 			<?php

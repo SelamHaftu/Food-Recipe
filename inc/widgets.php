@@ -4,15 +4,15 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function thunder_widgets_init() {
+function foodzone_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Right_Sidebar', 'thunder' ),
+		'name'          => esc_html__( 'Right_Sidebar', 'foodzone' ),
 		'id'            => 'right-sidebar',
-		'description'   => esc_html__( 'Add widgets here.', 'thunder' ),
+		'description'   => esc_html__( 'Add widgets here.', 'foodzone' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'thunder_widgets_init' );
+add_action( 'widgets_init', 'foodzone_widgets_init' );

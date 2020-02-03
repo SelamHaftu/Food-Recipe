@@ -16,7 +16,7 @@ get_header(); ?>
 									<strong>
 									<h6 class="page-title">
 										<?php
-                                    		printf(esc_html__('Search Results for: %s', 'thunder'), '<span>' . get_search_query() . '</span>');
+                                    		printf(esc_html__('Search Results for: %s', 'foodzone'), '<span>' . get_search_query() . '</span>');
 										?>
 										</strong>
 										</h6>
@@ -41,7 +41,7 @@ get_header(); ?>
 									<p style="font-size:12px;" class="card-text"><?php the_date(); ?></p>
 									<h6 style="list-style-type:none; color:black!important;" class="badge badge-pill badge-light"><?php the_category(" "); ?></h6>
 									<?php 
-									echo('<a href='  .esc_url( get_permalink() ). ' class="btn btn-success">ተጨማሪ ያንብቡ</a>');
+									echo('<a href='  .esc_url( get_permalink() ). ' class="btn btn-success">Read More</a>');
 									?>
 								</div>
 								</div>
@@ -58,7 +58,7 @@ get_header(); ?>
 									<strong>
 									<h6 class="page-title">
 										<?php
-                                    		printf(esc_html__('Search Results for: %s', 'thunder'), '<span>No Results Found</span>');
+                                    		printf(esc_html__('Search Results for: %s', 'foodzone'), '<span>No Results Found</span>');
 										?>
 										</strong>
 										</h6>

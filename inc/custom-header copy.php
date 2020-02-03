@@ -8,33 +8,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Thunder
+ * @package foodzone
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses thunder_header_style()
+ * @uses foodzone_header_style()
  */
-function thunder_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'thunder_custom_header_args', array(
+function foodzone_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'foodzone_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'thunder_header_style',
+		'wp-head-callback'       => 'foodzone_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'thunder_custom_header_setup' );
+add_action( 'after_setup_theme', 'foodzone_custom_header_setup' );
 
-if ( ! function_exists( 'thunder_header_style' ) ) :
+if ( ! function_exists( 'foodzone_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see thunder_custom_header_setup().
+	 * @see foodzone_custom_header_setup().
 	 */
-	function thunder_header_style() {
+	function foodzone_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*
